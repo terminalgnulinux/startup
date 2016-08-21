@@ -20,6 +20,12 @@
 #	onde o usuário poderá clicar duas vezes com o botão esquerdo sobre o campo, para entrar
 #	em modo de inserção e inserir suas configurações personalizadas.
 #------------------------------------------------------------------------------------------#
+# Nome do script
+SCRIPT="$(basename "$0")"
+
+# Pacote necessário
+if [ ! -x "$(which yad)" ]; then
+    echo "$SCRIPT: Erro: 'yad' não instalado."; exit 1; fi
 
 # Suprime mensagens de erro
 exec 2>/dev/null
